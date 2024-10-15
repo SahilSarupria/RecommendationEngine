@@ -1,0 +1,21 @@
+reel_id,title,genre,duration,creator,description,average_rating,num_ratings
+1,5-Minute Recipes,Cooking,300,Chef Jamie,Quick and easy recipes you can make in 5 minutes,4.5,150
+2,Travel Vlog: Bali,Travel,480,Alice Explorer,A day in Bali exploring beaches and temples,4.7,200
+3,Fitness Challenge 7-Day,Fitness,360,Fit Trainer,A complete 7-day workout routine for beginners,4.8,250
+4,DIY Home Decor,DIY,420,Handy Hannah,Creative and budget-friendly home decor ideas,4.6,180
+5,Guitar Basics 101,Music,600,Guitar Guru,A beginner's guide to playing the guitar,4.4,100
+6,Top 10 Anime of 2024,Entertainment,420,Anime Fanatic,Ranking the best anime shows released in 2024,4.9,300
+7,Daily Motivation Quotes,Inspiration,60,Motivator Mike,Short reels filled with motivational quotes,4.3,400
+8,Makeup Tutorial for Beginners,Beauty,540,Beauty Bella,A beginner's guide to flawless makeup,4.5,220
+9,Coding with Python Tips,Education,600,Code Master,Advanced tips for writing better Python code,4.6,150
+10,Yoga for Stress Relief,Fitness,300,Yoga Yogi,Simple yoga poses to relieve stress and tension,4.7,300
+11,Dog Training Tips,Animals,360,Trainer Tom,Top tips to train your dog effectively,4.8,180
+12,History of Space Exploration,Education,420,Space Nerd,A brief history of space exploration,4.4,160
+13,Street Food Tour: India,Travel,480,Foodie Frank,Exploring the street food culture in India,4.6,210
+14,Learn Origami for Beginners,Art,240,Artistic Anna,Simple origami projects you can make at home,4.5,130
+15,Car Maintenance 101,DIY,480,Mechanic Mike,Essential car maintenance tips for beginners,4.3,90
+16,Photography: Lighting Basics,Education,540,Photo Phil,Understanding lighting for better photography,4.6,110
+17,Quick 10-Minute Workouts,Fitness,600,Fitness Fiona,Quick workouts to fit into a busy schedule,4.8,270
+18,Best Netflix Shows of 2024,Entertainment,540,Stream Queen,Top Netflix shows you should not miss,4.7,230
+19,Camping Essentials,Travel,480,Outdoor Olivia,Everything you need to know for a perfect camping trip,4.5,160
+20,Painting with Watercolors,Art,720,Creative Cathy,A step-by-step watercolor painting tutorial,4.6,140
