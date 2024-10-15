@@ -4,6 +4,8 @@ from surprise.model_selection import train_test_split
 from surprise import accuracy
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+import random
+import math
 
 # Load the reels data
 reels_df = pd.read_csv("reels.csv")
@@ -63,13 +65,15 @@ def get_content_based_recommendations(reel_title, cosine_sim=cosine_sim, n_recom
 
 # Hybrid Recommendation Function
 def hybrid_recommendation(user_id, n_recommendations=5):
+    global ratings_df  # Declare ratings_df as global before modifying it
+
     # Get all reels rated by the user
     user_rated_reels = ratings_df[ratings_df['user_id'] == user_id]['reel_id'].tolist()
     
     if not user_rated_reels:
         print(f"No ratings found for user {user_id}.")
         return []
-
+    
     # Get content-based recommendations for each reel rated by the user
     content_based_recommendations = pd.DataFrame(columns=['title', 'reel_id'])
     
@@ -81,7 +85,29 @@ def hybrid_recommendation(user_id, n_recommendations=5):
     # Remove already rated reels
     content_based_recommendations = content_based_recommendations[~content_based_recommendations['reel_id'].isin(user_rated_reels)]
     
-    # Return unique recommended reels
+    # Randomly shuffle the content-based recommendations to introduce randomness
+    content_based_recommendations = content_based_recommendations.sample(frac=1).reset_index(drop=True)
+
+    # Pick the first recommendation
+    first_recommendation = content_based_recommendations.iloc[0]
+
+    # Generate a random rating between 0 and 5
+    random_rating = math.ceil(random.uniform(0, 5))
+
+    # Create a new DataFrame with the new rating
+    new_rating = pd.DataFrame({
+        'user_id': [user_id],
+        'reel_id': [first_recommendation['reel_id']],
+        'rating': [random_rating]
+    })
+
+    # Add the new rating to the ratings dataframe using pd.concat
+    ratings_df = pd.concat([ratings_df, new_rating], ignore_index=True)
+
+    # Save the updated ratings to the CSV file
+    ratings_df.to_csv("user_ratings.csv", index=False)
+
+    # Return unique recommended reels (excluding the one already added)
     return content_based_recommendations.drop_duplicates().head(n_recommendations)
 
 # Example of hybrid recommendation
